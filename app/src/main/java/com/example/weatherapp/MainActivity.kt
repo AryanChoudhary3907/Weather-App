@@ -17,7 +17,7 @@ import java.util.Locale
 import java.util.concurrent.locks.Condition
 
 
-//869d06611df6dd36c083dc0c12f75647
+
 class MainActivity : AppCompatActivity() {
    private val binding : ActivityMainBinding by lazy{
        ActivityMainBinding.inflate(layoutInflater)
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://api.openweathermap.org/data/2.5/")
             .build().create(ApiInterface::class.java)
-        val response = retrofit.getWeatherData(cityName ,"869d06611df6dd36c083dc0c12f75647" , "metric")
+        val response = retrofit.getWeatherData(cityName ,"YOUR API KEY" , "metric")
 
         response.enqueue(object : Callback<Weatherapp>{
             override fun onResponse(call: Call<Weatherapp>, response: Response<Weatherapp>) {
